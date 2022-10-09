@@ -46,10 +46,10 @@
     <script type="module">
         document.addEventListener('contextmenu', event => event.preventDefault());
         
-        import init from "./<!<!PROJECT_NAME!>!>.js";
+        import init from "./kpacubo.js";
 
         async function load(wasmPath) {
-            const totalLength = <!<!WASM_FILE_SIZE!>!>;
+            // const totalLength = ;
             const response = await fetch(wasmPath);
 
             let receivedLength = 0;
@@ -67,7 +67,7 @@
                 } else {
                     receivedLength += value.byteLength;
                     chunks.push(value);
-                    document.getElementById('bar').style['width'] = (100 * receivedLength / totalLength) + '%';
+                    // document.getElementById('bar').style['width'] = (100 * receivedLength / totalLength) + '%';
                 }
             }
 
@@ -81,7 +81,7 @@
             await init(wasmBytes);
         }
 
-        load('./<!<!PROJECT_NAME!>!>.wasm');
+        load('./kpacubo.wasm');
     </script>
     <div class="preloader-wrap" id="wrap">
         <div class="bar-container">
